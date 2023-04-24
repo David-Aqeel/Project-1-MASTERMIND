@@ -1,8 +1,8 @@
 # Project-1-MASTERMIND
 Wireframes:
 
-![Homepage Wireframe](imgs/Wireframe1.jpg)
-![Gameplay Wireframe](imgs/Wireframe2.jpg)
+![Homepage Wireframe](Project-1-Mastermind/imgs/Wireframe1.jpg)
+![Gameplay Wireframe](Project-1-Mastermind/imgs/Wireframe2.jpg)
 
 
 
