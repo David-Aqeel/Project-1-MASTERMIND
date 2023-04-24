@@ -35,4 +35,4 @@
 
 // if player gets the answer right, 'game complete' message will pop up with time taken and points received, and options for a 'new game' or 'back to menu'
 
-//if player gets high score 'new high score' message will pop up
+//if player gets high score 'new high score' message will pop.
