@@ -8,6 +8,16 @@ Wireframes:
 
 PSEUDOCODE:
 
+//Mastermind Game setup
+
+//Need a home page with the mastermind name top centered in big letter and three menu options: Game Rules, High Score List, and Start Game
+
+//clicking 'Game rules' will explain how to play the game with images of gameplay as well
+
+//clicking 'High score list' will show either the highest score or the 3 highest scores
+
+//clicking 'Start Game' will start the game
+
 //'Game rules' and 'high score list' will be a single static page
 
 //When player clicks 'start game' will be taken to the main game.
@@ -35,4 +45,4 @@ PSEUDOCODE:
 
 // if player gets the answer right, 'game complete' message will pop up with time taken and points received, and options for a 'new game' or 'back to menu'
 
-//if player gets high score 'new high score' message will pop up
+//if player gets high score 'new high score' message will pop.
