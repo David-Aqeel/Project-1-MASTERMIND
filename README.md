@@ -8,6 +8,16 @@ Wireframes:
 
 PSEUDOCODE:
 
+    //Start by making an empty guess array.
+    //cache dom elements
+    //generate an answer to compare with the user guesses.
+    //player can start guessing via dom interface.
+    //add guess to the guess array.
+    //if the guess is wrong and there are fewer than 10 guesses continue to the next guess, otherwise end game and show score/reset game button.
+    //give feedback by manipulating dom.
+
+--- 
+
 //Mastermind Game setup
 
 //Need a home page with the mastermind name top centered in big letter and three menu options: Game Rules, High Score List, and Start Game
@@ -18,10 +28,11 @@ PSEUDOCODE:
 
 //clicking 'Start Game' will start the game
 
-//'Game rules' and 'high score list' will be a single static page
+//#can 'Game rules' and 'high score list' be modals?###
 
 //When player clicks 'start game' will be taken to the main game.
 
+// manipulate dom to go to game view.
 
 // game will have the name top center, with the answer hidden behind the name
 
@@ -29,11 +40,18 @@ PSEUDOCODE:
 
 //score will be in the top right
 
-//timer will start when player makes first pick
+//timer will start when player makes first pick/            STRETCH
 
-//color choices will be on the right side along the border, below which there will be a 'check answer button'
+//color choices will be on the right side along the border, below which there will be a 'check answer button'.
 
 //the player will have 10 chances to guess the code, and there will be 10 lines numbered 10-1 from top to bottom on the left side along the border
+    //Start by making an empty guess array.
+    //cache dom elements
+    //generate an answer to compare with the user guesses.
+    //player can start guessing via dom interface.
+    //add guess to the guess array. (START WITH 1 GUESS AND WHEN THE CODE IS FUNCTIONAL JUST ADD GUESSES (li) TO AN INCREASING LIST (ul)).
+    //if the guess is wrong and there are fewer than 10 guesses continue to the next guess, otherwise end game and show score/reset game button.
+    //give feedback by manipulating dom.
 
 //each number will have 4 blank circles to the right of it that will be filled up when the player clicks on a color choice from the color menu.
 
@@ -45,4 +63,4 @@ PSEUDOCODE:
 
 // if player gets the answer right, 'game complete' message will pop up with time taken and points received, and options for a 'new game' or 'back to menu'
 
-//if player gets high score 'new high score' message will pop.
+//if player gets high score 'new high score' message will pop.      STRETCH
