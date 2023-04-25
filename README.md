@@ -12,7 +12,7 @@ PSEUDOCODE:
     //cache dom elements
     //generate an answer to compare with the user guesses.
     //player can start guessing via dom interface.
-    //add guess to the guess array.
+    //add guess to the guess array. (START WITH 1 GUESS AND WHEN THE CODE IS FUNCTIONAL JUST ADD GUESSES (li) TO AN INCREASING LIST (ol)).
     //if the guess is wrong and there are fewer than 10 guesses continue to the next guess, otherwise end game and show score/reset game button.
     //give feedback by manipulating dom.
 
