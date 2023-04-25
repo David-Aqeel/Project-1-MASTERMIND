@@ -1,3 +1,16 @@
+
+PSEUDOCODE:
+
+    //Start by making an empty guess array.
+    //cache dom elements
+    //generate an answer to compare with the user guesses.
+    //player can start guessing via dom interface.
+    //add guess to the guess array.
+    //if the guess is wrong and there are fewer than 10 guesses continue to the next guess, otherwise end game and show score/reset game button.
+    //give feedback by manipulating dom.
+
+--- 
+
 //Mastermind Game setup
 
 //Need a home page with the mastermind name top centered in big letter and three menu options: Game Rules, High Score List, and Start Game
