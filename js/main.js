@@ -1,8 +1,30 @@
 
 PSEUDOCODE:
+/*----- constants -----*/
+//Mastermind logo
+//Color choices
+//Check Answer Button
 
+/*----- state variables -----*/
+//guess slots
+
+/*----- cached elements  -----*/
+//color choices
+
+/*----- event listeners -----*/
+//button clicks
+//correct answer
+
+
+/*----- functions -----*/
+//pick colors
+//check answers
+//compare guess to answer
+//
     //Start by making an empty guess array.
+    let guess_1 = [];
     //cache dom elements
+
     //generate an answer to compare with the user guesses.
     //player can start guessing via dom interface.
     //add guess to the guess array.

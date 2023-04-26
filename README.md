@@ -18,7 +18,42 @@ PSEUDOCODE:
 
 --- 
 
+/*----- constants -----*/
+//Mastermind logo
+//Color choices- Hold the values of the color choices 
+//Check Answer Button
+
+/*----- state variables -----*/
+//guess slots - 10 arrays with 4 nested arrays
+//correct guess vs incorrect guess
+
+/*----- cached elements  -----*/
+//color choices
+//play again button
+//game board
+//check answer button
+//empty color slots (black)
+
+
+/*----- event listeners -----*/
+//button clicks
+//correct answer
+
+
+///Upon game loading the page shoud:
+/// -Initialize state variables:
+        >Setup empty guess slots(4 nested arrays)/render board
+        >Show color options on the side
+        >Have an answer generated (that is hidden) to match the guesses with
+
+---
 //Mastermind Game setup
+
+-game board:
+    ```js
+    let board
+    ```
+    
 
 //Need a home page with the mastermind name top centered in big letter and three menu options: Game Rules, High Score List, and Start Game
 
