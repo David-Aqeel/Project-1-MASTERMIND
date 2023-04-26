@@ -33,13 +33,13 @@ ul {
     list-style-type: none;
 }
 
-#game_board  {
+#board  {
     display: grid;
     grid-template-columns: repeat(4, 5vmin);
     gap: 3vmin;
 }
 
-#game_board>div {
+#board>div {
         border-style: solid;
         color: black;
         width: 30px;
@@ -47,7 +47,7 @@ ul {
         border-radius: 50%;
 }
 
-#game_board>div:hover {
+#board>div:hover {
     transform: scale(1.5);
 }
 
@@ -123,7 +123,7 @@ button:hover  {
     background-color: rgb(204, 0, 255);
 }
 
-#check_ans {
+#checkAns {
     height: 40px;
     width: 75px;
     text-align: center;

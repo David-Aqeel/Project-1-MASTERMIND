@@ -21,42 +21,57 @@
         </ol>
     </div> 
 -->
-
-<!-- section for the empty guess slots-->
-    <section id="guess_slots">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </section>
-
-    <!-- section for the game board-->
+   
+<!-- section for the game board-->
+        <section id="board">
         <!-- row 9-->
-        <div></div>
+        <div id="g9c0"></div>
+        <div id="g9c1"></div>
+        <div id="g9c2"></div>
+        <div id="g9c3"></div>
         <!-- row 8-->
-        <div></div>
+        <div id="g8c0"></div>
+        <div id="g8c1"></div>
+        <div id="g8c2"></div>
+        <div id="g8c3"></div>
         <!-- row 7-->
-        <div></div>
+        <div id="g7c0"></div>
+        <div id="g7c1"></div>
+        <div id="g7c2"></div>
+        <div id="g7c3"></div>
         <!-- row 6-->
-        <div></div>
+        <div id="g6c0"></div>
+        <div id="g6c1"></div>
+        <div id="g6c2"></div>
+        <div id="g6c3"></div>
         <!-- row 5-->
-        <div></div>
+        <div id="g5c0"></div>
+        <div id="g5c1"></div>
+        <div id="g5c2"></div>
+        <div id="g5c3"></div>
         <!-- row 4-->
-        <div></div>
+        <div id="g4c0"></div>
+        <div id="g4c1"></div>
+        <div id="g4c2"></div>
+        <div id="g4c3"></div>
         <!-- row 3-->
-        <div></div>
+        <div id="g3c0"></div>
+        <div id="g3c1"></div>
+        <div id="g3c2"></div>
+        <div id="g3c3"></div>
+        
         <!-- row 2-->
         <div id="g2c0"></div>
         <div id="g2c1"></div>
         <div id="g2c2"></div>
         <div id="g2c3"></div>
+
         <!-- row 1-->
         <div id="g1c0"></div>
         <div id="g1c1"></div>
         <div id="g1c2"></div>
         <div id="g1c3"></div>
         
-        <section id="game_board">
         <!-- row 0-->
         <div id="g0c0"></div>
         <div id="g0c1"></div>
@@ -64,19 +79,19 @@
         <div id="g0c3"></div>
     </section>
 
-    <button>PLAY AGAIN</button>
+  <button id="playAgain">PLAY AGAIN</button> 
 
-    <div class="button_choices">
+    <div id="buttonChoices">
         <ul>
-            <li id="red">RD</li>
-            <li id="orange">OR</li>
-            <li id="yellow">YL</li>
-            <li id="green">GR</li>
-            <li id="blue">BL</li>
-            <li id="purple">PR</li>
-            <li id="check_ans"><button>Check<br>Answer</button> </li>
+            <li id="red" data-color="red">RD</li>
+            <li id="orange" data-color="orange">OR</li>
+            <li id="yellow" data-color="yellow">YL</li>
+            <li id="green" data-color="green">GR</li>
+            <li id="blue" data-color="blue">BL</li>
+            <li id="purple" data-color="purple">PR</li>
         </ul>
+        <button id="checkAns">Check<br>Answer</button>
     </div>
-
+    
 </body>
 </html>
