@@ -107,6 +107,11 @@ colorPicks.forEach(colorLi => {
     colorLi.addEventListener('click', pickColor)
 }) 
 
+
+function changeColor () {
+
+}
+
 /*console.log('this is colorPicks', colorPicks)
 colorPicks.forEach(color => {
     console.log()
@@ -140,13 +145,18 @@ console.log(getRandomAnswer(COLORS)) //generating random answer sequence
 
 // store answer const = getRandomAnswer
 
+function changeColor ( y ) {
+    let x = document.getElementById("g0c0");
+    x.style.backgroundColor = y
+}
+
 
 // popup the answer when guessed correctly
 
 
 
 function init() {
-   /* board =[
+   board =[
         [0, 0, 0, 0], // guess 1
         [0, 0, 0, 0], // guess 2
         [0, 0, 0, 0], // guess 3
@@ -158,7 +168,7 @@ function init() {
         [0, 0, 0, 0], // guess 9
         [0, 0, 0, 0], // guess 10
 
-    ];*/
+    ];
     turn = 1;
     winner = null;
     render();
@@ -172,6 +182,7 @@ function render() {
     //render message
 
 }
+
 
 function renderBoard() {
     board.forEach((colArr, colIdx) => {

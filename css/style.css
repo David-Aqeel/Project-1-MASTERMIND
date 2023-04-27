@@ -56,17 +56,17 @@ button  {
     color: aliceblue;
     background-color: rgb(41, 40, 40);
 }
-button:hover  {
+/*button:hover  {
     color: rgb(0, 0, 0);
     background-color: rgb(255, 255, 255);
-}
+}*/
 
 
 #red {
     height: 30px;
     width: 30px;
     text-align: center;
-    /*position: relative;*/
+    position: relative;
     margin-top: 10px;
     margin-left: 700px;
     border-radius: 50%;
