@@ -47,9 +47,6 @@ ul {
         border-radius: 50%;
 }
 
-#board>div:hover {
-    transform: scale(1.5);
-}
 
 
 button  {
