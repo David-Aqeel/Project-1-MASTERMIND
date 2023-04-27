@@ -43,27 +43,33 @@ console.log('this is boardEls', boardEls)
 const colorPicks = [...document.querySelectorAll('li')]
 
 const pickColor = (e) => {
+
+    console.log('this is the color')
+    console.log(e.target.dataset.color)
+
     //I want to have the colors appear in the empty guess slots starting from the bottom left of the array
-    
+    function fillSlot () {
+
+    }
     //I want the colorPicks to populate one row at a time only, from left to right
 
     //I want the user to be able to change their picks by clicking on the populated slot
 
-            //When a user picks a color, it will start filling the bottom most empty row
-            //the first pick will populate the left most column of the lowest unfilled row
+            //When a user picks a color, the first pick will populate the left most column of the lowest unfilled row
+            
             // the second pick will populate the spot directly to the right of the first column 
             //the third pick will populate the spot directly to the right of the second column 
             //the fourth pick will populate the spot directly to the right of the third column 
-            //the user can click on a populated spot to empty it, or even more than one
-            //the user can pick colors again which will populate the same row from left to right
+            //when all 4 spots in a row are filled the user cannot fill any more spots unless:
+                //the user clicks on an already picked color to unselect it
+                //the user clicks the check answer button to verify their guess with (getRandomAnswer(COLORS))
             //the user should only be able to populate one row at a time before clicking checkAnsBtn
-            //once the user clicks checkAnsBtn the game will compare their answer with the correct, computer generated answer to see if it is correct
             //if the answer is correct, the user will get a "winner" message
-            //if the answer is wrong, the user will move on to their next guess
-            //if the user guesses 10 times and gets the answer wrong, the game will end, and the play again button will pop up
+            //if the answer is wrong, the user will move on to their next guess (next row)
+            //if the user guesses 10 times and gets the answer wrong, the game will end, and the play again button will pop up.
 
-    console.log('this is the color')
-    console.log(e.target.dataset.color)
+
+    
 }
  
 colorPicks.forEach(colorLi => {
@@ -91,13 +97,13 @@ function createAns() {
     //i want this function to pick 4 random options out of the 6 available options and store that as the answer
     answer = [] // make sure answer array is empty at the beginning of game
     for (let i = 0; i < 4; i++) { //looping 4 times 
-        answer.push(COLORS[Math.floor(Math.random()*6)]) // picking one random color option and pushing it to 'answer'
+        answer.push(COLORS[Math.floor(Math.random()* COLORS.length)]) // picking one random color option and pushing it to 'answer'
     }
     console.log(answer)
 }
 
 function getRandomAnswer(answer) {
-    return [...answer].sort(() => Math.random () > 0.5 ? 1 : -1).slice(0,4)//sorting through the color options and removing already selected colors
+    return [...answer].sort(() => Math.random () > 0.5 ? 1 : -1).slice(0,4)//sorting through the color options and removing already selected colors and 
 }
 console.log(getRandomAnswer(COLORS)) //generating random answer sequence
 
