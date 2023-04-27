@@ -37,10 +37,10 @@ console.log('this is checkAnsBtn', checkAnsBtn)
 const playAgainBtn = document.querySelector('button')
 console.log('this is playAgainBtn', playAgainBtn)
 
-const boardEls = [...document.querySelectorAll('#gameBoard>div')]
+const boardEls = [...document.querySelectorAll('#board>div')]
 console.log('this is boardEls', boardEls)
 
-const colorPicks = document.querySelectorAll('li') 
+const colorPicks = [...document.querySelectorAll('li')]
 
 const pickColor = (e) => {
     //I want to have the colors appear in the empty guess slots starting from the bottom left of the array
@@ -91,17 +91,22 @@ function createAns() {
     //i want this function to pick 4 random options out of the 6 available options and store that as the answer
     answer = [] // make sure answer array is empty at the beginning of game
     for (let i = 0; i < 4; i++) { //looping 4 times 
-        answer.push(COLORS[Math.floor(Math.random()*6)]) // picking one random color option and pushing it to 'answer
+        answer.push(COLORS[Math.floor(Math.random()*6)]) // picking one random color option and pushing it to 'answer'
     }
     console.log(answer)
 }
 
+function getRandomAnswer(answer) {
+    return [...answer].sort(() => Math.random () > 0.5 ? 1 : -1).slice(0,4)//sorting through the color options and removing already selected colors
+}
+console.log(getRandomAnswer(COLORS)) //generating random answer sequence
+
+
 // popup the answer when guessed correctly
 
-createAns()
+
 
 function init() {
-    createAns()
     board =[
         [0, 0, 0, 0], // guess 1
         [0, 0, 0, 0], // guess 2
