@@ -5,7 +5,7 @@ Mastermind is a code guessing game where the player has 10 guesses to guess a no
 
 Screenshots:
 
-![Gameplay] (https://github.com/David-Aqeel/Project-1-MASTERMIND/blob/response/imgs/Screenshot.png)
+![Gameplay] (https://github.com/David-Aqeel/Project-1-MASTERMIND/blob/main/imgs/Screenshot.png)
 
 
 Technology Used: 
