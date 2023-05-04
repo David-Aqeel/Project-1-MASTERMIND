@@ -5,50 +5,94 @@ const COLORS = [
     'yellow',
     'green',
     'blue',
-    'purple'
+    'purple',
 ]
 
-function createAns() {
-    answer = [] 
-    for (let i = 0; i < 4; i++) { 
-        answer.push(COLORS[Math.floor(Math.random()* COLORS.length)])
-    }
-    console.log(answer)
-}
+const colorPicks = [...document.querySelectorAll('li')]
+
+let computerGuessArray = []
 
 function getRandomAnswer(answer) {
     return [...answer].sort(() => Math.random () > 0.5 ? 1 : -1).slice(0,4)
 }
-console.log(getRandomAnswer(COLORS))
+
+computerGuessArray = getRandomAnswer(COLORS)
+
+console.log(computerGuessArray)
+
+
+
+
+
+// save the answers as a variable
+
+// const = randmAnswer = getRandomAnswer(COLORS)
+// if userAns === computerGuessArray then popup winner message
+// if userAns !== computerGuessArray then move to the next guess/row (current++)
+
 
 let currentGuess = 0
 
 let currentColumn = 0
 
 const checkAnsBtn = document.getElementById('checkAns')
-console.log('this is checkAnsBtn', checkAnsBtn)
 
-const pickColor = (e) => {
+let userGuessArr = []
 
-    console.log('this is the color')
-    console.log(e.target.dataset.color)
+for(x=0; x<=3; x++) {
 
-    const guessDiv = document.getElementById(`g${currentGuess}c${currentColumn}`)
-    console.log(guessDiv)
+    function pickColor(e) {
 
+        const selectedColor = e.target.dataset.color;
+        const guessDiv = document.getElementById(`g${currentGuess}c${currentColumn}`);
+        guessDiv.style.backgroundColor = selectedColor;
+        // increment currentColumn to move to the next guess
+        currentColumn++;
+        console.log(selectedColor);
+        userGuessArr.push(selectedColor)
+        return selectedColor;
+        
+    }
+    if(userGuessArr.length === 4) {
+        break
+    }
 }
- function changeColor ( y ) {
-        let x = document.getElementById("g0c0");
-        x.style.backgroundColor = y
+// log all of the computers guesses into its own array. compare that array with the users guesses
+// use the .every method:
+// user guess. every =>. 
 
-   
+console.log(userGuessArr)
 
-    colorPicks.forEach(colorLi => {
+/*function pickColor(e) {
+    const selectedColor = e.target.dataset.color;
+    const guessDiv = document.getElementById(`g${currentGuess}c${currentColumn}`);
+    guessDiv.style.backgroundColor = selectedColor;
+    // increment currentColumn to move to the next guess
+    currentColumn++;
+    console.log(selectedColor);
+    return selectedColor;
+    userGuessArr.push(selectedColor)
+}*/
+
+
+// currentGuess++ for changing the guess
+
+
+  //for each guess, add the 4 picks to an empty array and then compare that with the answer,
+  //if it is wrong then move on to the next guess, and if it is right then render the winner message. 
+
+
+
+// add the guess to a list and compare with answer
+
+
+function changeColor ( y ) {
+      
+        colorPicks.forEach(colorLi => {
         colorLi.addEventListener('click', pickColor)
-    }) 
-
+        }) 
+    
 }
-
 
 
 
@@ -72,6 +116,8 @@ function init() {
     render();
 }
 
+
+
 function render() {
     renderBoard()
     renderControls()
@@ -81,11 +127,12 @@ function render() {
 function renderBoard() {
     board.forEach((colArr, colIdx) => {
     console.log(colArr, colIdx)
-        guessArr.forEach((cellVal, rowIdx) => {
+        colArr.forEach((cellVal, rowIdx) => {
         console.log(cellVal, rowIdx)
-        const cellId = `c${colIdx}r${rowIdx}`
+        const cellId = `r${rowIdx}c${colIdx}`
         const cellEl = document.getElementById(cellId)
         cellEl.style.backgroundColor = COLORS[cellVal]
+    
         })
     })
 }
@@ -102,4 +149,3 @@ function renderControls()   {
  function playerGuess(event)    {
         const colIdx = boardEls.indexOf(event.target)
  }
-   
