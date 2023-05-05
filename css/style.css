@@ -47,7 +47,7 @@ ul {
 
 #board  {
     display: grid;
-    flex: 200px
+    flex: 200px;
     align-items: center;    
     justify-content: center;
     grid-template-columns: repeat(4, 5vmin);
