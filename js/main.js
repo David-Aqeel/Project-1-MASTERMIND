@@ -1,175 +1,253 @@
 
-//PSEUDOCODE:
-/*----- constants -----*/
-//Mastermind logo
-//Color choices
 const COLORS = [
     'red',
     'orange',
     'yellow',
     'green',
     'blue',
-    'purple'
+    'purple',
 ]
 
-//Check Answer Button
+const colorPicks = document.querySelectorAll('li')
 
-/*----- state variables -----*/
-//guess slots
-
-let answer = []
-
-let board // array of 4 guesses
-
-
-let winner // null || 1 || -1
-
-/*----- cached elements  -----*/
-//color choices
-
-const checkAnsBtn = document.getElementById('checkAns')
-console.log('this is checkAnsBtn', checkAnsBtn)
-
-//const playAgainBtn = document.getElementById('playAgain')
-
-const playAgainBtn = document.querySelector('button')
-console.log('this is playAgainBtn', playAgainBtn)
-
-const boardEls = [...document.querySelectorAll('#board>div')]
-console.log('this is boardEls', boardEls)
-
-const colorPicks = [...document.querySelectorAll('li')]
-
-const pickColor = (e) => {
-
-    console.log('this is the color')
-    console.log(e.target.dataset.color)
-
-    //I want to have the colors appear in the empty guess slots starting from the bottom left of the array
-    function fillSlot () {
-
-    }
-    //I want the colorPicks to populate one row at a time only, from left to right
-
-    //I want the user to be able to change their picks by clicking on the populated slot
-
-            //When a user picks a color, the first pick will populate the left most column of the lowest unfilled row
-            
-            // the second pick will populate the spot directly to the right of the first column 
-            //the third pick will populate the spot directly to the right of the second column 
-            //the fourth pick will populate the spot directly to the right of the third column 
-            //when all 4 spots in a row are filled the user cannot fill any more spots unless:
-                //the user clicks on an already picked color to unselect it
-                //the user clicks the check answer button to verify their guess with (getRandomAnswer(COLORS))
-            //the user should only be able to populate one row at a time before clicking checkAnsBtn
-            //if the answer is correct, the user will get a "winner" message
-            //if the answer is wrong, the user will move on to their next guess (next row)
-            //if the user guesses 10 times and gets the answer wrong, the game will end, and the play again button will pop up.
-
-
-    
-}
- 
-colorPicks.forEach(colorLi => {
-    colorLi.addEventListener('click', pickColor)
-}) 
-
-/*console.log('this is colorPicks', colorPicks)
-colorPicks.forEach(color => {
-    console.log()
-})*/
-
-/*----- event listeners -----*/
-//button clicks
-//document.getElementById('red').addEventListener('click', playerGuess)
-
-//correct answer
-
-
-/*----- functions -----*/
-//pick colors
-//check answers
-//compare guess to answer
-
-function createAns() {
-    //i want this function to pick 4 random options out of the 6 available options and store that as the answer
-    answer = [] // make sure answer array is empty at the beginning of game
-    for (let i = 0; i < 4; i++) { //looping 4 times 
-        answer.push(COLORS[Math.floor(Math.random()* COLORS.length)]) // picking one random color option and pushing it to 'answer'
-    }
-    console.log(answer)
-}
+let computerGuessArray = []
 
 function getRandomAnswer(answer) {
-    return [...answer].sort(() => Math.random () > 0.5 ? 1 : -1).slice(0,4)//sorting through the color options and removing already selected colors and 
+    return [...answer].sort(() => Math.random () > 0.5 ? 1 : -1).slice(0,4)
 }
-console.log(getRandomAnswer(COLORS)) //generating random answer sequence
+computerGuessArray = getRandomAnswer(COLORS)
+
+console.log('This is answer', computerGuessArray)
 
 
-// popup the answer when guessed correctly
 
-createAns()
+
+
+// save the answers as a variable
+
+// const = randmAnswer = getRandomAnswer(COLORS)
+// if userAns === computerGuessArray then popup winner message
+// if userAns !== computerGuessArray then move to the next guess/row (current++)
+
+
+let currentGuess = 0
+
+let currentColumn = 0
+
+let checkWinCount 
+
+//const playAgainBtn = document.querySelector('button')
+// console.log('this is playAgainBtn', playAgainBtn)
+
+let userGuessArray = []
+
+
+function pickColor(e) {
+
+        const selectedColor = e.target.dataset.color;
+        const guessDiv = document.getElementById(`g${currentGuess}c${currentColumn}`);
+        guessDiv.style.backgroundColor = selectedColor;
+        // increment currentColumn to move to the next guess
+        currentColumn++;
+        console.log(selectedColor);
+        if (userGuessArray.length === 4) {
+            userGuessArray = []
+        }
+        // else if (userGuessArray.length !== 4 && e.target.id === "g9c3") {
+                
+        // }
+        userGuessArray.push(selectedColor);
+       moveUpRow();
+        return selectedColor;
+
+}
+
+//make switching rows its own function: move up row
+function moveUpRow() {
+    if (currentColumn === 4) {
+        compareArrays()
+        // reset currentColumn to 0 and increment currentGuess
+        currentColumn = 0;
+        currentGuess++;
+        if (currentGuess >= 10 && userGuessArray[i] !== computerGuessArray[i]) {
+            document.querySelector('#you-lose').style.display="flex"   
+        }
+        // TODO: handle switching to the next guess
+    }    
+    console.log(userGuessArray)
+}
+
+//create a function to render out the player array everytime it moves up a row 
+//when a row is complete(user guess array has 4 elements), compare the user array with the computer guess array(nested if loop)(if guess array = 4 then do a for loop with an if statement)
+//if userGuessArr matches computerGuessArr, then render winner message, else move to next row and clear out the user guess array. Can move the moveUpRow function into this statement for checking win condition.
+
+function compareArrays() {
+    let matches = 0
+    const tryAgain = document.getElementById('try-again');
+
+    if (userGuessArray.length === 4 ) {
+        for (i = 0; i < computerGuessArray.length; i ++) {
+            if (userGuessArray[i] === computerGuessArray[i]) {
+                checkWinCount++
+                console.log('this is user guess', userGuessArray[i])
+                console.log('this is computer answer', computerGuessArray[i])
+                console.log('We have a match')
+                matches++
+                tryAgain.innerHTML = "Amazing.";
+
+                // make a check win count variable and if checkWinCount = 4 then you have a winner. render win message
+
+            } else {
+                console.log("We don't have a match")
+                checkWinCount=0
+                tryAgain.innerHTML = "Sorry, your guess didn't match. Please try again.";
+                setTimeout(function() {
+                    tryAgain.innerHTML = "";
+                  }, 1000);
+                return;
+            }
+
+        }
+    }
+    console.log('this is matches', matches)// win/lose statement
+    if (matches === 4) {
+        document.querySelector('#you-won').style.display="flex"
+    }
+    else {
+        matches = 0
+        userGuessArray = []
+    }
+}
+// let a1 = document.querySelector('#g0c0').style.backgroundColor
+// let a2 = document.querySelector('#g0c1')
+// let a3 = document.querySelector('#g0c2')
+// let a4 = document.querySelector('#g0c3')
+
+
+
+//compareArray list:
+// if the user array matches (if matches === 4) declare a winner
+// if the two arrays don't match clear out the user guess array so we only get a maximum of  4 items in the array
+//if the two arrays don't match move on to the next guess
+//if all 10 guesses are wrong, declare lose msg
+//need to track if user guesses are incorrect (state variable) and how many incorrect guesses.
+
+
+
+
+
+//needs a counter
+//make a clear array function so that after each check of 4 we will clear the array
+//call clear array function in your else statement in the compare array function
+
+
+
+// function 
+// if(userGuessArr.length === 4) {
+//     let isCorrect = userGuessArr.every((color, index) => {
+//         return color === computerGuessArray[index];
+//     });
+// }
+
+
+// if (isCorrect) {
+//     console.log('Winner!')
+// }
+// else {
+//     console.log
+// }
+
+
+// log all of the computers guesses into its own array. compare that array with the users guesses
+// use the .every method:
+// user guess. every =>. 
+
+//console.log(userGuessArray)
+
+/*function pickColor(e) {
+    const selectedColor = e.target.dataset.color;
+    const guessDiv = document.getElementById(`g${currentGuess}c${currentColumn}`);
+    guessDiv.style.backgroundColor = selectedColor;
+    // increment currentColumn to move to the next guess
+    currentColumn++;
+    console.log(selectedColor);
+    return selectedColor;
+    userGuessArr.push(selectedColor)
+}*/
+
+
+// currentGuess++ for changing the guess
+
+
+  //for each guess, add the 4 picks to an empty array and then compare that with the answer,
+  //if it is wrong then move on to the next guess, and if it is right then render the winner message. 
+
+
+
+// add the guess to a list and compare with answer
+
+
+function changeColor ( i ) {
+      
+        colorPicks.forEach(colorLi => {
+        colorLi.addEventListener('click', pickColor)
+        }) 
+    
+}
+changeColor()
+
 
 
 function init() {
-    createAns()
-    board =[
-        [0, 0, 0, 0], // guess 1
-        [0, 0, 0, 0], // guess 2
-        [0, 0, 0, 0], // guess 3
-        [0, 0, 0, 0], // guess 4
-        [0, 0, 0, 0], // guess 5
-        [0, 0, 0, 0], // guess 6
-        [0, 0, 0, 0], // guess 7
-        [0, 0, 0, 0], // guess 8
-        [0, 0, 0, 0], // guess 9
-        [0, 0, 0, 0], // guess 10
+   board =[
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0], 
 
     ];
-    turn = 1;
+    checkWinCount = 0;
+
     winner = null;
     render();
 }
 
-function render() {
-    //render board
-    renderBoard()
-    //render buttons
-    renderControls()
-    //render message
-
-}
-
-function renderBoard() {
-    board.forEach((colArr, colIdx) => {
-    console.log(colArr, colIdx)
-        guessArr.forEach((cellVal, rowIdx) => {
-        console.log(cellVal, rowIdx)
-        const cellId = `c${colIdx}r${rowIdx}`
-        const cellEl = document.getElementById(cellId)
-        cellEl.style.backgroundColor = COLORS[cellVal]
-        })
-    })
-}
 
 
-function renderControls()   {
-    playAgainBtn.style.visibility = winner ?'visible' : 'hidden'
+// function render() {
+//     renderBoard()
+//     renderControls()
+// }
 
-    boardEls.forEach((boardEl, colIdx) => {
-        const hideMarker = !board[colIdx].include(0) || winner 
-        boardEl.style.visibility = hideBoard ? 'hidden' : 'visible'
-    })
-}
- function playerGuess(event)    {
-        const colIdx = boardEls.indexOf(event.target)
- }
-    //Start by making an empty guess array.
-    //let guess_1 = [];
-    //cache dom elements
 
-    //generate an answer to compare with the user guesses.
-    //player can start guessing via dom interface.
-    //add guess to the guess array.
-    //if the guess is wrong and there are fewer than 10 guesses continue to the next guess, otherwise end game and show score/reset game button.
-    //give feedback by manipulating dom.
+// function renderBoard() {
+//     board.forEach((colArr, colIdx) => {
+//     console.log(colArr, colIdx)
+//         colArr.forEach((cellVal, rowIdx) => {
+//         console.log(cellVal, rowIdx)
+//         const cellId = `r${rowIdx}c${colIdx}`
+//         const cellEl = document.getElementById(cellId)
+//         cellEl.style.backgroundColor = COLORS[cellVal]
+    
+//         })
+//     })
+// }
+
+
+// function renderControls()   {
+//     playAgainBtn.style.visibility = winner ?'visible' : 'hidden'
+
+//     boardEls.forEach((boardEl, colIdx) => {
+//         const hideMarker = !board[colIdx].include(0) || winner 
+//         boardEl.style.visibility = hideBoard ? 'hidden' : 'visible'
+//     })
+// }
+//  function playerGuess(event)    {
+//         const colIdx = boardEls.indexOf(event.target)
+//  }
