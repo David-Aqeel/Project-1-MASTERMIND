@@ -19,8 +19,6 @@ const COLORS = [
 
 let answer = []
 
-
-
 let board // array of 4 guesses
 
 
