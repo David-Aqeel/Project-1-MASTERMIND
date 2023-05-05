@@ -83,6 +83,8 @@ function moveUpRow() {
 
 function compareArrays() {
     let matches = 0
+    const tryAgain = document.getElementById('try-again');
+
     if (userGuessArray.length === 4 ) {
         for (i = 0; i < computerGuessArray.length; i ++) {
             if (userGuessArray[i] === computerGuessArray[i]) {
@@ -91,11 +93,17 @@ function compareArrays() {
                 console.log('this is computer answer', computerGuessArray[i])
                 console.log('We have a match')
                 matches++
+                tryAgain.innerHTML = "Amazing.";
+
                 // make a check win count variable and if checkWinCount = 4 then you have a winner. render win message
 
             } else {
                 console.log("We don't have a match")
                 checkWinCount=0
+                tryAgain.innerHTML = "Sorry, your guess didn't match. Please try again.";
+                setTimeout(function() {
+                    tryAgain.innerHTML = "";
+                  }, 2000);
                 return;
             }
 
@@ -114,6 +122,7 @@ function compareArrays() {
 // let a2 = document.querySelector('#g0c1')
 // let a3 = document.querySelector('#g0c2')
 // let a4 = document.querySelector('#g0c3')
+
 
 
 //compareArray list:
@@ -186,7 +195,6 @@ function changeColor ( i ) {
     
 }
 changeColor()
-
 
 
 
