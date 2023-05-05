@@ -62,7 +62,7 @@ ul {
         border-radius: 50%;
 }
 
-#board>div:hover {
+#colors>ul>li:hover {
     transform: scale(1.5);
 }
 
