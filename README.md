@@ -42,3 +42,5 @@ Next Steps:
 4. Add score:
     4.1 Score based on number of guesses and maybe even time (Add Timer)
     4.2 Add High Score list
+5. Add seperate Home Page with Menu options and seperate gameplay page
+6. Add instructions to the side
