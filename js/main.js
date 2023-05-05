@@ -69,7 +69,7 @@ function moveUpRow() {
         // reset currentColumn to 0 and increment currentGuess
         currentColumn = 0;
         currentGuess++;
-        if (currentGuess >= 10) {
+        if (currentGuess >= 10 && userGuessArray[i] !== computerGuessArray[i]) {
             document.querySelector('#you-lose').style.display="flex"   
         }
         // TODO: handle switching to the next guess
@@ -103,7 +103,7 @@ function compareArrays() {
                 tryAgain.innerHTML = "Sorry, your guess didn't match. Please try again.";
                 setTimeout(function() {
                     tryAgain.innerHTML = "";
-                  }, 2000);
+                  }, 1000);
                 return;
             }
 
