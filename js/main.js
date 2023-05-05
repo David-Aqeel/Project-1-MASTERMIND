@@ -34,8 +34,6 @@ let currentGuess = 0
 
 let currentColumn = 0
 
-const checkAnsBtn = document.getElementById('checkAns')
-
 let checkWinCount 
 
 //const playAgainBtn = document.querySelector('button')

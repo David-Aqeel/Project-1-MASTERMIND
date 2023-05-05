@@ -78,7 +78,6 @@
             <li id="blue" data-color="blue" onclick="changeColor('rgb(0, 47, 255)')">BL</li>
             <li id="purple" data-color="purple" onclick="changeColor('rgb(204, 0, 255)')">PR</li>
         </ul>
-        <button id="checkAns">Check<br>Answer</button>
     </div>
     
     <div id="turn">
@@ -87,13 +86,25 @@
     
     <div id="you-won">
         <!--winner pop up message-->
-        <h1>Congratulations! You won!</h1>
-        <button id="play-again">Play Again</button>
+        <h1>Congratulations! <br> You won!</h1>
+        <nav>
+            <a href="./index.html">
+                <h3>        
+                    <button id="play-again">Play Again</button> 
+                </h3>
+            </a>
+        </nav>
     </div>
     <div id="you-lose">
-        <!--winner pop up message-->
+        <!--loser pop up message-->
         <h1>Congratulations! <br> You got played!</h1>
-        <button id="play-again">Play Again</button>
+        <nav>
+            <a href="./index.html">
+                <h3>        
+                    <button id="play-again">Play Again</button> 
+                </h3>
+            </a>
+        </nav>
     </div>
 </body>
 </html>
