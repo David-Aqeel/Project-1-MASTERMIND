@@ -40,6 +40,8 @@ JavaScript, HTML, CSS
 
 Getting Started:
 
+##Mastermind is a code guessing game where the player has 10 guesses to guess a non-repeating 4 color sequence out of 6 color choices.##
+
 1. On game start, the computer will generate a random 4-color-combination, which is the     
     answer.
 2. The player will have 10 tries to guess this 4 color combination.
