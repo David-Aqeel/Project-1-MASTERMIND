@@ -1,5 +1,10 @@
 Title: MASTERMIND
 
+
+GO TO MAIN BRANCH       GO TO MAIN BRANCH       GO TO MAIN BRANCH
+GO TO MAIN BRANCH       GO TO MAIN BRANCH       GO TO MAIN BRANCH
+GO TO MAIN BRANCH       GO TO MAIN BRANCH       GO TO MAIN BRANCH       GO TO MAIN BRANCH
+
 Mastermind is a code guessing game where the player has 10 guesses to guess a non-repeating 4 color sequence out of 6 color choices.
 
 
