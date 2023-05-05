@@ -5,14 +5,32 @@ Mastermind is a code guessing game where the player has 10 guesses to guess a no
 
 Screenshots:
 
+
+1. Game Start
 ![Gameplay](https://github.com/David-Aqeel/Project-1-MASTERMIND/blob/main/imgs/Screenshot1.png)
+
+2. Pick Colors
 ![Gameplay](https://github.com/David-Aqeel/Project-1-MASTERMIND/blob/main/imgs/Screenshot2.png)
+
+3. Wrong Guess
 ![Gameplay](https://github.com/David-Aqeel/Project-1-MASTERMIND/blob/main/imgs/Screenshot3.png)
+
+4. Answer In Console
 ![Gameplay](https://github.com/David-Aqeel/Project-1-MASTERMIND/blob/main/imgs/Screenshot4.png)
+
+5. Win Message
 ![Gameplay](https://github.com/David-Aqeel/Project-1-MASTERMIND/blob/main/imgs/Screenshot5.png)
+
+6. Play Again
 ![Gameplay](https://github.com/David-Aqeel/Project-1-MASTERMIND/blob/main/imgs/Screenshot6.png)
+
+7. Wrong Guess Message
 ![Gameplay](https://github.com/David-Aqeel/Project-1-MASTERMIND/blob/main/imgs/Screenshot7.png)
+
+8. Lose Message
 ![Gameplay](https://github.com/David-Aqeel/Project-1-MASTERMIND/blob/main/imgs/Screenshot8.png)
+
+9. Win Example
 ![Gameplay](https://github.com/David-Aqeel/Project-1-MASTERMIND/blob/main/imgs/Screenshot9.png)
 
 
