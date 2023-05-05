@@ -17,7 +17,7 @@ function getRandomAnswer(answer) {
 }
 computerGuessArray = getRandomAnswer(COLORS)
 
-console.log(computerGuessArray)
+console.log('This is answer', computerGuessArray)
 
 
 
